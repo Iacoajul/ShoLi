@@ -26,6 +26,7 @@ class ListAdapter (
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val curItem = Items[position]
         holder.itemView.apply {
+            tvItemText
 
         }
     }
