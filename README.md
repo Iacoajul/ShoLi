@@ -7,3 +7,6 @@
 *Programmierung*
 In 2 Klassen, 1 Datenklasse und 1 Interface wird eine Mechanik (Adapterklasse) implementiert, die adaptiv Listenelemente (Datenklasse) entgegennimmt
 und über das von der Hauptklasse verwaltete interface darstellt. Nähere Details sind der Kommentur des codes zu entnehmen.
+
+*APK*
+Die fertige App befindet sich im Hauptordner des Repositorys und trägt den Namen "app-debug.apk"
