@@ -7,7 +7,8 @@
     android:layout_height="80dp"
     android:padding="8dp"
     >
-
+<!-- TextView ist die componente für den Text der jeweiligen items auf der Shoppingliste
+        Für alles weitere ist der code comment genug-->
     <TextView
         android:id="@+id/tvItemText"
         android:layout_width="0dp"
@@ -20,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.508" />
-
+<!-- Deletebutton der jeweiligen elemte. Der code ist comment genug-->
     <Button
         android:id="@+id/btKillItem"
         android:layout_width="wrap_content"

@@ -19,8 +19,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
-        //compose = true
+        viewBinding = true //i want viewbinding to work...
     }
 
     buildTypes {

@@ -9,47 +9,47 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MyListAdapter (
-    private val items : MutableList<ListItem>,
-     val listener : DeleteListener
-) : RecyclerView.Adapter<MyListAdapter.ListViewHolder>() {
+    private val items : MutableList<ListItem>, //i have a list and the list has a name
+    val listener : DeleteListener // i also have a funny delete mechanic
+) : RecyclerView.Adapter<MyListAdapter.ListViewHolder>() { //i implement adapters for recyvlerViews and take my own viewholder for that
 
-    inner class ListViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val itemTextView: TextView = itemView.findViewById(R.id.tvItemText)
+    inner class ListViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) { //viewholder als innere klasse implementiert viewholder
+        val itemTextView: TextView = itemView.findViewById(R.id.tvItemText) //finde die views und speichere sie für zugriff
         val deleteButton : Button = itemView.findViewById<Button>(R.id.btKillItem)
 
         init {
-            deleteButton.setOnClickListener {
-                listener.onDeleteClick(adapterPosition)
+            deleteButton.setOnClickListener { //der delete button hat eine onclick funktion
+                listener.onDeleteClick(adapterPosition) //diese sagt der mainActivity, dass bitte das Item gelöscht werden soll
             }
         }
     }
 
-    fun addItem(listItem: ListItem) {
+    fun addItem(listItem: ListItem) { //addItem listfunction halt...
         items.add(listItem)
-        notifyItemInserted(items.size -1)
+        notifyItemInserted(items.size -1) //update the view so stuff is properly displayed
     }
 
-    fun deleteItem(position: Int) {
+    fun deleteItem(position: Int) { //reverse obere funktion
         items.removeAt(position)
         notifyItemRemoved(position)
     }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        return ListViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.list_items,
-                parent,
-                false
+//hier beginnen die viewholder interface funktionen
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder { //oncreate...
+        return ListViewHolder( //be a viewholder for lists
+            LayoutInflater.from(parent.context).inflate( //link to parent view
+                R.layout.list_items, //display my list items
+                parent, //i dont know
+                false //be dynamic and not bound to root of app
             )
         )
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val curItem = items[position]
-        holder.itemTextView.text = curItem.title
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) { //what is your purpose?
+        val curItem = items[position] //take list items
+        holder.itemTextView.text = curItem.title //display them in the recyclerView
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount(): Int { //der name ist programm
     return items.size
     }
 }
