@@ -1,5 +1,5 @@
 package com.example.sholi
 
-data class ListItem(
+ class ListItem(
     val title : String
 )
