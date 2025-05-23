@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Recycler view um dynamisch elemente einer liste darzustellen-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListItems"
         android:layout_width="match_parent"
@@ -17,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Textfeld zur eingabe neuer items für die Liste-->
     <EditText
         android:id="@+id/etInField"
         android:layout_width="0dp"
@@ -28,12 +30,13 @@
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Button zum hinzufügen des eingegebenen Items-->
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
